@@ -1,4 +1,28 @@
 if game.PlaceId == 2753915549 or game.PlaceId == 85211729168715 or game.PlaceId == 4442272183 or game.PlaceId == 79091703265657 or game.PlaceId == 7449423635 or game.PlaceId == 100117331123089 then
+
+_G.Team = _G.Team or "Pirate"
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+
+if _G.Team == "Pirate" then
+local btn = PlayerGui:WaitForChild("Main (minimal)")
+.ChooseTeam.Container.Pirates.Frame.TextButton
+firesignal(btn.MouseButton1Down)
+firesignal(btn.MouseButton1Click)
+firesignal(btn.MouseButton1Up)
+firesignal(btn.Activated)
+elseif _G.Team == "Marine" then
+local btn = PlayerGui:WaitForChild("Main (minimal)")
+.ChooseTeam.Container.Marines.Frame.TextButton
+firesignal(btn.MouseButton1Down)
+firesignal(btn.MouseButton1Click)
+firesignal(btn.MouseButton1Up)
+firesignal(btn.Activated)
+end
 _G.Speed = 200
 local HttpService = game:GetService("HttpService")
 local fileName = "SavedSessionConfig.json"
