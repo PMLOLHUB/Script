@@ -1,3 +1,4 @@
+_G.Speed = 200
 local HttpService = game:GetService("HttpService")
 local fileName = "SavedSessionConfig.json"
 
