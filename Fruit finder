@@ -1,5 +1,6 @@
 if game.PlaceId == 2753915549 or game.PlaceId == 85211729168715 or game.PlaceId == 4442272183 or game.PlaceId == 79091703265657 or game.PlaceId == 7449423635 or game.PlaceId == 100117331123089 then
-
+while true do wait(1)
+pcall(function()  
 _G.Team = _G.Team or "Pirate"
 
 local Players = game:GetService("Players")
@@ -23,6 +24,7 @@ firesignal(btn.MouseButton1Click)
 firesignal(btn.MouseButton1Up)
 firesignal(btn.Activated)
 end
+end)
 _G.Speed = 200
 local HttpService = game:GetService("HttpService")
 local fileName = "SavedSessionConfig.json"
@@ -50,6 +52,9 @@ else
         end
     end
 end
+repeat
+    wait()
+until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
 
 local queue = queue_on_teleport or (syn and syn.queue_on_teleport) or queueonteleport or (fluxus and fluxus.queue_on_teleport)
 if queue then
